@@ -3,6 +3,7 @@ package com.niit.shopgorgeous.daoimpl;
 import java.util.List;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,7 +23,9 @@ public class ProductDAOImpl implements ProductDAO{
 	
 	@Transactional
 	public void save(Product product) {
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
+//		sessionFactory.getCurrentSession().saveOrUpdate(product);
+		Session session = sessionFactory.getCurrentSession();
+		 session.saveOrUpdate(product);
 	}
 
 	@Transactional
@@ -32,10 +35,10 @@ public class ProductDAOImpl implements ProductDAO{
 	}
 
 	@Transactional
-	public void delete(int id) {
-		Product ProductToDelete = new Product();
-		ProductToDelete.setProductid(id);
-		sessionFactory.getCurrentSession().delete(ProductToDelete);
+	public void delete(int productid) {
+		Product product = new Product();
+		product.setProductid(productid);
+		sessionFactory.getCurrentSession().delete(product);
 		
 	}
 
