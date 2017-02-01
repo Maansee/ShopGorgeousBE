@@ -12,7 +12,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shopgorgeous.dao.UserDAO;
-import com.niit.shopgorgeous.model.User;
+import com.niit.shopgorgeous.model.Cart;
+
+import com.niit.shopgorgeous.model.UserCustomer;
 
 @SuppressWarnings("deprecation")
 @Transactional
@@ -24,7 +26,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@SuppressWarnings("unchecked")
 	@Transactional
-	public List<User> list() {
+	public List<UserCustomer> list() {
 
 		String hql = "from User";
 
@@ -34,19 +36,19 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Transactional
-	public User get(int id) {
-		return (User) sessionFactory.getCurrentSession().get(User.class, id);
+	public UserCustomer get(int id) {
+		return (UserCustomer) sessionFactory.getCurrentSession().get(UserCustomer.class, id);
 
 	}
 	 
 	@Transactional
-	public User validate(String id, String password) {
+	public UserCustomer validate(String id, String password) {
 		System.out.println("inside validate");
 		String hql = "from User where id ='" + id + "'  and password='" + password + "'";
 		System.out.println("After hql");
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		System.out.println("after query");
-		return (User) query.uniqueResult();
+		return (UserCustomer) query.uniqueResult();
 
 	}
 
@@ -57,7 +59,7 @@ public class UserDAOImpl implements UserDAO {
 //			sessionFactory.getCurrentSession().saveOrUpdate(user);
 //	}
 		
-	public boolean update(User user) {
+	public boolean update(UserCustomer user) {
 		try {
 			sessionFactory.getCurrentSession().update(user);
 		} catch (Exception e) {
@@ -70,12 +72,28 @@ public class UserDAOImpl implements UserDAO {
 
 	
 	@Transactional
-	public void save(User user) {
+	public void save(UserCustomer user) {
 //		sessionFactory.getCurrentSession().saveOrUpdate(user);
 	    Session session = sessionFactory.getCurrentSession();
 //	    user.setRole("ROLE_ADMIN");
 	    user.setRole("ROLE_USER");
+	    Cart cart = new Cart();
+		user.setCart(cart);
+		cart.setUserCustomer(user);
 	    session.saveOrUpdate(user);
 
 }
+	
+	public UserCustomer get(String username) {
+
+		Session session = this.sessionFactory.openSession();
+		Query query = session.createQuery("from UserCustomer where username=?");
+		query.setString(0, username);
+		UserCustomer user = (UserCustomer) query.uniqueResult();
+		// logger.info("USer loaded successfully, User details="+User);
+		// session.flush();
+		// session.close();
+		return user;
+
+	}
 }
