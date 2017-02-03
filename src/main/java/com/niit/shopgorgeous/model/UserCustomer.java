@@ -27,6 +27,37 @@ public class UserCustomer {
 	//@Size(min = 4, max = 16)
 	private int id;
 	
+	
+	@NotBlank (message = "Enter a valid User Name !")
+	private String username;
+	
+	@Size(min = 4, max = 16)
+	@NotBlank (message = "Enter a password!")
+	private String password;
+	
+	@Size(min = 10, max = 12)
+	@NotBlank (message = "Enter a valid number")
+	private String mobile;
+	
+	private String mailid;
+	
+
+	private String role;
+
+
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "billingid")
+	private BillingAddress billingAddress;
+	
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "shippingid")
+	private ShippingAddress shippingAddress;
+	
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "cartId")
+	@JsonIgnore
+	private Cart cart;
+
 	public int getId() {
 		return id;
 	}
@@ -34,8 +65,6 @@ public class UserCustomer {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
 
 	public String getUsername() {
 		return username;
@@ -61,14 +90,6 @@ public class UserCustomer {
 		this.mobile = mobile;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
 	public String getMailid() {
 		return mailid;
 	}
@@ -77,38 +98,12 @@ public class UserCustomer {
 		this.mailid = mailid;
 	}
 
-	@NotBlank (message = "Enter a valid User Name !")
-	private String username;
-	
-	@Size(min = 4, max = 16)
-	@NotBlank (message = "Enter a password!")
-	private String password;
-	
-	@Size(min = 10, max = 12)
-	@NotBlank (message = "Enter a valid number")
-	private String mobile;
-	
-	private String mailid;
-	
-
-	private String role;
-
-
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "billingid")
-	private BillingAddress billingAddress;
-	
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "cartId")
-	@JsonIgnore
-	private Cart cart;
-
-	public Cart getCart() {
-		return cart;
+	public String getRole() {
+		return role;
 	}
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public BillingAddress getBillingAddress() {
@@ -127,7 +122,12 @@ public class UserCustomer {
 		this.shippingAddress = shippingAddress;
 	}
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "shippingid")
-	private ShippingAddress shippingAddress;
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 }
+	
