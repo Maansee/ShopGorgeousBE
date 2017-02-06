@@ -18,6 +18,11 @@ import org.springframework.stereotype.Component;
 @Table
 public class BillingAddress implements Serializable {
 
+	
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id

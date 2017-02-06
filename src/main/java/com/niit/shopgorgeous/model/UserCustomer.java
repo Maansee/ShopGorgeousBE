@@ -1,5 +1,7 @@
 package com.niit.shopgorgeous.model;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -19,8 +21,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table
 @Component
-public class UserCustomer {
+public class UserCustomer implements Serializable {
 	
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
