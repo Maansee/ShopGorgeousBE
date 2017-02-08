@@ -79,7 +79,7 @@ public class UserDAOImpl implements UserDAO {
 	    user.setRole("ROLE_USER");
 	    Cart cart = new Cart();
 		user.setCart(cart);
-		cart.setUserCustomer(user);
+		cart.setUsercustomer(user);
 	    session.saveOrUpdate(user);
 
 }

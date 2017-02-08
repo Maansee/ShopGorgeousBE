@@ -12,14 +12,21 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Component
 @Entity
 @Table
 public class ShippingAddress implements Serializable {
 	
+	
+
+		/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
+		@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int shippingid;
 
@@ -56,6 +63,7 @@ public class ShippingAddress implements Serializable {
 	private String zipcode;
 
 	@OneToOne(mappedBy = "shippingAddress")
+	@JsonIgnore
 	private UserCustomer user;
 
 	public int getShippingid() {

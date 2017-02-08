@@ -23,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Cart implements Serializable {
 
 	
+	
+
+	
+
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,13 +39,13 @@ public class Cart implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "id")
 	@JsonIgnore
-	private UserCustomer user;
+	private UserCustomer usercustomer;
 
 	@Column
 	private int totalprice;
 
-	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JsonIgnore
+	 @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER) 	
+	 @JsonIgnore
 	private List<CartItem> cartItem;
 
 	public int getCartId() {
@@ -49,13 +56,7 @@ public class Cart implements Serializable {
 		this.cartId = cartId;
 	}
 
-	public UserCustomer getUserCustomer() {
-		return user;
-	}
 
-	public void setUserCustomer(UserCustomer user) {
-		this.user = user;
-	}
 
 	public int getTotalprice() {
 		return totalprice;
@@ -65,6 +66,14 @@ public class Cart implements Serializable {
 		this.totalprice = totalprice;
 	}
 
+	public UserCustomer getUsercustomer() {
+		return usercustomer;
+	}
+
+	public void setUsercustomer(UserCustomer usercustomer) {
+		this.usercustomer = usercustomer;
+	}
+
 	public List<CartItem> getCartItems() {
 		return cartItem;
 	}
@@ -72,4 +81,6 @@ public class Cart implements Serializable {
 	public void setCartItems(List<CartItem> cartItem) {
 		this.cartItem = cartItem;
 	}
+
+
 }

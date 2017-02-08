@@ -13,12 +13,17 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Component
 @Entity
 @Table
 public class BillingAddress implements Serializable {
 
 	
+
+	
+
 
 	/**
 	 * 
@@ -62,6 +67,7 @@ public class BillingAddress implements Serializable {
 	private String zipcode;
 
 	@OneToOne(mappedBy = "billingAddress", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private UserCustomer user;
 
 	public int getBillingid() {
