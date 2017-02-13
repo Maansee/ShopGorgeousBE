@@ -38,10 +38,10 @@ public class UserCustomer implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	//@Size(min = 4, max = 16)
+	
 	private int id;
 	
-	
+	@Size(min = 4, max = 16)
 	@NotBlank (message = "Enter a valid User Name !")
 	private String username;
 	
@@ -53,9 +53,10 @@ public class UserCustomer implements Serializable {
 	@NotBlank (message = "Enter a valid number")
 	private String mobile;
 	
+	@NotBlank
 	private String mailid;
 	
-
+	@NotBlank
 	private String role;
 
 
