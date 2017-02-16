@@ -30,7 +30,7 @@ public class CustomerOrderDAOImpl implements CustomerOrderDAO {
 	
 	@Transactional
 	public void addCustomerOrder(CustomerOrder customerOrder) {
-		System.out.println("hello customer table ");
+		System.out.println("hello123");
 		Session session = sessionFactory.getCurrentSession();
 		System.out.println("cust1");
 		session.saveOrUpdate(customerOrder);

@@ -27,45 +27,45 @@ public class ShippingAddress implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-		@Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int shippingid;
 
 	@Column
-	@NotBlank(message = "{flatno.required}")
+
 	private String flatno;
 
 	@Column
-	@NotBlank(message = "{buildingname.required}")
+
 	private String buildingname;
 
 	@Column
-	@NotBlank(message = "{localityname.required}")
+
 	private String localityname;
 
 	@Column
-	@NotBlank(message = "{landmark.required}")
+
 	private String landmark;
 
 	@Column
-	@NotBlank(message = "{cityname.required}")
+	
 	private String cityname;
 
 	@Column
-	@NotBlank(message = "{statename.required}")
+
 	private String statename;
 
 	@Column
-	@NotBlank(message = "{countryname.required}")
+	
 	private String countryname;
 
 	@Column
-	@NotBlank(message = "{zipcode.required}")
+	
 	private String zipcode;
 
 	@OneToOne(mappedBy = "shippingAddress")
 	@JsonIgnore
-	@NotBlank
+
 	private UserCustomer user;
 
 	public int getShippingid() {

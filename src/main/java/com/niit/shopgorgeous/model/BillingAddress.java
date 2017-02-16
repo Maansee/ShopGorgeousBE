@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
@@ -36,40 +37,40 @@ public class BillingAddress implements Serializable {
 	private int billingid;
 
 	@Column
-	@NotBlank(message = "{flatno.required}")
+	
 	private String flatno;
 
 	@Column
-	@NotBlank(message = "{buildingname.required}")
+
 	private String buildingname;
 
 	@Column
-	@NotBlank(message = "{localityname.required}")
+	
 	private String localityname;
 
 	@Column
-	@NotBlank(message = "{landmark.required}")
+	
 	private String landmark;
 
 	@Column
-	@NotBlank(message = "{cityname.required}")
+
 	private String cityname;
 	
 	@Column
-	@NotBlank(message = "{statename.required}")
+	
 	private String statename;
 
 	@Column
-	@NotBlank(message = "{countryname.required}")
+
 	private String countryname;
 
 	@Column
-	@NotBlank(message = "{zipcode.required}")
+	
 	private String zipcode;
 
 	@OneToOne(mappedBy = "billingAddress", cascade = CascadeType.ALL)
 	@JsonIgnore
-	/*@NotBlank(message = "{user.required}")*/
+	
 	private UserCustomer user;
 
 	public int getBillingid() {

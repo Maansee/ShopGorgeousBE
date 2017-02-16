@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
@@ -24,10 +25,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UserCustomer implements Serializable {
 	
 
-	
-
-
-	
 
 
 	/**
@@ -53,10 +50,10 @@ public class UserCustomer implements Serializable {
 	@NotBlank (message = "Enter a valid number")
 	private String mobile;
 	
-	@NotBlank
+	@Email(message = "Enter an email")
 	private String mailid;
 	
-	@NotBlank
+
 	private String role;
 
 

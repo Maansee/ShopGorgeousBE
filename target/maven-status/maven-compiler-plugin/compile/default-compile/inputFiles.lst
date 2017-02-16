@@ -3,6 +3,7 @@ F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeou
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\ShippingAddress.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\dao\CartItemDAO.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\CustomerOrder.java
+F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\UserCustomer.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\Supplier.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\daoimpl\ProductDAOImpl.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\BillingAddress.java
@@ -15,7 +16,6 @@ F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeou
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\dao\CartDAO.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\dao\CategoryDAO.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\Cart.java
-F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\User.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\daoimpl\UserDAOImpl.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\daoimpl\CartItemDAOImpl.java
 F:\Eclipse Workspace\MyProject\ShopGorgeousBE\src\main\java\com\niit\shopgorgeous\model\CartItem.java

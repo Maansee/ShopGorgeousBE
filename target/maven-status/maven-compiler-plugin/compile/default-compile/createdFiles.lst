@@ -2,6 +2,7 @@ com\niit\shopgorgeous\dao\ProductDAO.class
 com\niit\shopgorgeous\daoimpl\CustomerOrderDAOImpl.class
 com\niit\shopgorgeous\daoimpl\CategoryDAOImpl.class
 com\niit\shopgorgeous\model\Category.class
+com\niit\shopgorgeous\model\UserCustomer.class
 com\niit\shopgorgeous\dao\CartDAO.class
 com\niit\shopgorgeous\dao\CartItemDAO.class
 com\niit\shopgorgeous\dao\CategoryDAO.class
@@ -21,4 +22,3 @@ com\niit\shopgorgeous\config\ApplicationContextConfig.class
 com\niit\shopgorgeous\daoimpl\CartItemDAOImpl.class
 com\niit\shopgorgeous\model\Product.class
 com\niit\shopgorgeous\model\BillingAddress.class
-com\niit\shopgorgeous\model\User.class
